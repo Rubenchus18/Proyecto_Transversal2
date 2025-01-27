@@ -15,6 +15,7 @@
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.validator.apply_to_ddl">false</property>
   <property name="hibernate.hbm2ddl.auto">none</property>
-
+  <mapping resource="persistencias/Equipo.hbm.xml"/>
+  <mapping resource="persistencias/Jugador.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>
