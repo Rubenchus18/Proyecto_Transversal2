@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 27 ene 2025, 13:42:58 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="liga_fantasy" name="persistencias.Jugador" optimistic-lock="none" table="jugador">
+        <id name="idJugador" type="int">
+            <column name="id_jugador"/>
+            <generator class="foreign">
+                <param name="property">equipo</param>
+            </generator>
+        </id>
+        <one-to-one class="persistencias.Equipo" constrained="true" name="equipo"/>
+        <property name="nombre" type="string">
+            <column length="100" name="nombre" not-null="true"/>
+        </property>
+        <property name="posicion" type="string">
+            <column length="3" name="posicion" not-null="true"/>
+        </property>
+        <property name="fuerzaAtaque" type="int">
+            <column name="fuerza_ataque" not-null="true"/>
+        </property>
+        <property name="fuerzaTecnica" type="int">
+            <column name="fuerza_tecnica" not-null="true"/>
+        </property>
+        <property name="fuerzaDefensa" type="int">
+            <column name="fuerza_defensa" not-null="true"/>
+        </property>
+        <property name="fuerzaPortero" type="int">
+            <column name="fuerza_portero" not-null="true"/>
+        </property>
+        <property name="seleccionado" type="boolean">
+            <column name="seleccionado" not-null="true"/>
+        </property>
+        <property name="idEquipo" type="java.lang.Integer">
+            <column name="id_equipo"/>
+        </property>
+    </class>
+</hibernate-mapping>

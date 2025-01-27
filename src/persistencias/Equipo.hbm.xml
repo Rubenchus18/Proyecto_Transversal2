@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 27 ene 2025, 13:42:58 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="liga_fantasy" name="persistencias.Equipo" optimistic-lock="none" table="equipo">
+        <id name="idEquipo" type="int">
+            <column name="id_equipo"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="50" name="nombre" not-null="true"/>
+        </property>
+        <property name="victorias" type="int">
+            <column name="victorias" not-null="true"/>
+        </property>
+        <property name="empates" type="int">
+            <column name="empates" not-null="true"/>
+        </property>
+        <property name="derrotas" type="int">
+            <column name="derrotas" not-null="true"/>
+        </property>
+        <property name="puntos" type="int">
+            <column name="puntos" not-null="true"/>
+        </property>
+        <property name="portero" type="int">
+            <column name="portero" not-null="true"/>
+        </property>
+        <property name="defensa" type="int">
+            <column name="defensa" not-null="true"/>
+        </property>
+        <property name="centrocampista" type="int">
+            <column name="centrocampista" not-null="true"/>
+        </property>
+        <property name="delantero" type="int">
+            <column name="delantero" not-null="true"/>
+        </property>
+        <one-to-one class="persistencias.Jugador" name="jugador"/>
+    </class>
+</hibernate-mapping>
