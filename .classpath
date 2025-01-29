@@ -6,6 +6,28 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/byte-buddy-1.12.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/classmate-1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/hibernate-commons-annotations-5.1.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/hibernate-core-5.6.5.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/hibernate-jpamodelgen-5.6.5.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/istack-commons-runtime-3.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/jandex-2.4.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/javax.activation-api-1.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/javax.persistence-api-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/jaxb-runtime-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/jboss-logging-3.4.3.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/mysql-connector-java-8.0.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/stax-ex-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/txw2-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/lib/FastInfoset-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/LibreriaCSV/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/LibreriaCSV/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/LibreriaCSV/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/LibreriaCSV/commons-lang3-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ruben/Downloads/LibreriaCSV/opencsv-5.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
