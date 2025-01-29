@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 27 ene 2025, 13:42:58 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 29 ene 2025, 8:55:38 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class catalog="liga_fantasy" name="persistencias.Jugador" optimistic-lock="none" table="jugador">
         <id name="idJugador" type="int">
             <column name="id_jugador"/>
-            <generator class="foreign">
-                <param name="property">equipo</param>
-            </generator>
+            <generator class="assigned"/>
         </id>
-        <one-to-one class="persistencias.Equipo" constrained="true" name="equipo"/>
+        <many-to-one class="persistencias.Equipo" fetch="select" name="equipo">
+            <column name="id_equipo"/>
+        </many-to-one>
+        <property name="equipo_1" type="string">
+            <column length="100" name="equipo" not-null="true"/>
+        </property>
         <property name="nombre" type="string">
             <column length="100" name="nombre" not-null="true"/>
         </property>
@@ -29,9 +33,7 @@
         </property>
         <property name="seleccionado" type="boolean">
             <column name="seleccionado" not-null="true"/>
-        </property>
-        <property name="idEquipo" type="java.lang.Integer">
-            <column name="id_equipo"/>
+
         </property>
     </class>
 </hibernate-mapping>
