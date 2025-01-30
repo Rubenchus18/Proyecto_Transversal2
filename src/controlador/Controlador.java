@@ -28,7 +28,7 @@ public class Controlador implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.vista.btnEmpezar) {
 			this.vista.panelInicio.setVisible(false);
-			this.vista.panelPlantilla.setVisible(true);
+			this.vista.PanelPlantilla.setVisible(true);
 		}
 	}
 	
@@ -46,7 +46,7 @@ public class Controlador implements ActionListener{
 	public void imagenes() {
 		this.vista.lblFondo.setIcon(fotoEscalarLabel(this.vista.lblFondo,"imagenes/fondo-principal.jpg"));
 		this.vista.lblLogo.setIcon(fotoEscalarLabel(this.vista.lblLogo,"imagenes/logo.png"));
-		this.vista.lblfondocesped.setIcon(fotoEscalarLabel(this.vista.lblfondocesped,"imagenes/cesped.png"));
+		this.vista.lblFondoPlantilla.setIcon(fotoEscalarLabel(this.vista.lblFondoPlantilla,"imagenes/cesped.png"));
 		this.vista.btnEmpezar.setIcon(fotoEscalarButton(this.vista.btnEmpezar,"imagenes/boton-inicio.png"));
 	}
 }
