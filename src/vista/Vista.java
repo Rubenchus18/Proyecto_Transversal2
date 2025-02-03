@@ -27,18 +27,25 @@ public class Vista extends JFrame {
 	public JLabel lblTexto;
 	public JButton btnEmpezar;
 	public JPanel PanelPlantilla;
-	public JLabel lblFondoPlantilla;
-	public JButton btnNewButton_1;
-	public JButton btnNewButton_2;
-	public JButton btnNewButton_3;
-	public JButton btnNewButton_4;
-	public JButton btnNewButton_5;
-	public JButton btnNewButton_6;
-	public JButton btnNewButton_7;
-	public JButton btnNewButton_8;
-	public JButton btnNewButton_9;
-	public JButton btnNewButton_10;
+	public JButton btnDelanteroDerecho;
+	public JButton btnCentroCampistaDerecho;
+	public JButton btnCentroCampistaDerechoCentro;
+	public JButton btnCentroCampistaIzquierdoCentro;
+	public JButton btnCentroCampistaIzquierdo;
+	public JButton btnDefensaDerecha;
+	public JButton btnDefensaDerechaCentro;
+	public JButton btnDefensaIzquierdaCentro;
+	public JButton btnDefensaIzquierda;
+	public JButton btnPortero;
 	public JButton btnDelanteroIzquierda;
+	public JPanel panelElecion;
+	public JButton btnEleccionUno;
+	public JButton btnEleccionDos;
+	public JButton btnEleccionTres;
+	public JButton btnEleccionCuatro;
+	public JLabel lblFondoPlantilla;
+	public JLabel lblFondoDraft;
+	public JLabel lblSalir;
 	/**
 	 * Launch the application.
 	 */
@@ -82,52 +89,82 @@ public class Vista extends JFrame {
 		   contentPane.add(PanelPlantilla);
 		   PanelPlantilla.setLayout(null);
 		    
-		    btnNewButton_10 = new JButton("");
-		    btnNewButton_10.setBounds(626, 622, 85, 91);
-		    PanelPlantilla.add(btnNewButton_10);
+		     panelElecion = new JPanel();
+		    panelElecion.setBounds(353, 148, 651, 324);
+		    panelElecion.setVisible(false);
+		    PanelPlantilla.add(panelElecion);
+		    panelElecion.setLayout(null);
+		     
+		     lblSalir = new JLabel("");
+		     lblSalir.setBounds(606, 0, 45, 31);
+		     panelElecion.add(lblSalir);
 		    
-		    btnNewButton_9 = new JButton("");
-		    btnNewButton_9.setBounds(870, 482, 85, 91);
-		    PanelPlantilla.add(btnNewButton_9);
+		     btnEleccionUno = new JButton("");
+		    btnEleccionUno.setBounds(43, 29, 116, 285);
+		    panelElecion.add(btnEleccionUno);
 		    
-		    btnNewButton_4 = new JButton("");
-		    btnNewButton_4.setBounds(747, 343, 85, 91);
-		    PanelPlantilla.add(btnNewButton_4);
+		     btnEleccionDos = new JButton("");
+		    btnEleccionDos.setBounds(188, 29, 117, 285);
+		    panelElecion.add(btnEleccionDos);
 		    
-		    btnNewButton_8 = new JButton("");
-		    btnNewButton_8.setBounds(747, 482, 85, 91);
-		    PanelPlantilla.add(btnNewButton_8);
+		     btnEleccionTres = new JButton("");
+		    btnEleccionTres.setBounds(345, 29, 118, 285);
+		    panelElecion.add(btnEleccionTres);
 		    
-		    btnNewButton_7 = new JButton("");
-		    btnNewButton_7.setBounds(525, 482, 85, 91);
-		    PanelPlantilla.add(btnNewButton_7);
+		     btnEleccionCuatro = new JButton("");
+		    btnEleccionCuatro.setBounds(495, 29, 116, 285);
+		    panelElecion.add(btnEleccionCuatro);
 		    
-		    btnNewButton_6 = new JButton("");
-		    btnNewButton_6.setBounds(403, 482, 85, 91);
-		    PanelPlantilla.add(btnNewButton_6);
+		    lblFondoDraft = new JLabel("");
+		    lblFondoDraft.setBounds(0, 0, 651, 324);
+		    panelElecion.add(lblFondoDraft);
 		    
-		    btnNewButton_5 = new JButton("");
-		    btnNewButton_5.setBounds(870, 343, 85, 91);
-		    PanelPlantilla.add(btnNewButton_5);
+		    btnPortero = new JButton("");
+		    btnPortero.setBounds(626, 622, 85, 91);
+		    PanelPlantilla.add(btnPortero);
 		    
-		    btnNewButton_3 = new JButton("");
-		    btnNewButton_3.setBounds(525, 343, 85, 91);
-		    PanelPlantilla.add(btnNewButton_3);
+		    btnDefensaIzquierda = new JButton("");
+		    btnDefensaIzquierda.setBounds(870, 482, 85, 91);
+		    PanelPlantilla.add(btnDefensaIzquierda);
 		    
-		    btnNewButton_2 = new JButton("");
-		    btnNewButton_2.setBounds(403, 343, 85, 91);
-		    PanelPlantilla.add(btnNewButton_2);
+		    btnCentroCampistaIzquierdoCentro = new JButton("");
+		    btnCentroCampistaIzquierdoCentro.setBounds(747, 343, 85, 91);
+		    PanelPlantilla.add(btnCentroCampistaIzquierdoCentro);
 		    
-		    btnNewButton_1 = new JButton("");
-		    btnNewButton_1.setBounds(735, 148, 85, 91);
-		    PanelPlantilla.add(btnNewButton_1);
+		    btnDefensaIzquierdaCentro = new JButton("");
+		    btnDefensaIzquierdaCentro.setBounds(747, 482, 85, 91);
+		    PanelPlantilla.add(btnDefensaIzquierdaCentro);
+		    
+		    btnDefensaDerechaCentro = new JButton("");
+		    btnDefensaDerechaCentro.setBounds(525, 482, 85, 91);
+		    PanelPlantilla.add(btnDefensaDerechaCentro);
+		    
+		    btnDefensaDerecha = new JButton("");
+		    btnDefensaDerecha.setBounds(403, 482, 85, 91);
+		    PanelPlantilla.add(btnDefensaDerecha);
+		    
+		    btnCentroCampistaIzquierdo = new JButton("");
+		    btnCentroCampistaIzquierdo.setBounds(870, 343, 85, 91);
+		    PanelPlantilla.add(btnCentroCampistaIzquierdo);
+		    
+		    btnCentroCampistaDerechoCentro = new JButton("");
+		    btnCentroCampistaDerechoCentro.setBounds(525, 343, 85, 91);
+		    PanelPlantilla.add(btnCentroCampistaDerechoCentro);
+		    
+		    btnCentroCampistaDerecho = new JButton("");
+		    btnCentroCampistaDerecho.setBounds(403, 343, 85, 91);
+		    PanelPlantilla.add(btnCentroCampistaDerecho);
+		    
+		    btnDelanteroDerecho = new JButton("");
+		    btnDelanteroDerecho.setBounds(735, 148, 85, 91);
+		    PanelPlantilla.add(btnDelanteroDerecho);
 		    
 		     btnDelanteroIzquierda = new JButton("");
 		    btnDelanteroIzquierda.setBounds(525, 148, 85, 91);
 		    PanelPlantilla.add(btnDelanteroIzquierda);
-		   
-		    lblFondoPlantilla = new JLabel("");
-		    lblFondoPlantilla.setBounds(0, 0, 1329, 742);
+		    
+		     lblFondoPlantilla = new JLabel("");
+		    lblFondoPlantilla.setBounds(0, 0, 1329, 764);
 		    PanelPlantilla.add(lblFondoPlantilla);
 		 
 		  panelInicio = new JPanel();
