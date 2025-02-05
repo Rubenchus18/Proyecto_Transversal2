@@ -14,18 +14,25 @@ public class Controlador implements ActionListener {
 
     public Controlador(Vista vista) {
         this.vista = vista;
+        
         this.vista.btnEmpezar.addActionListener(this);
+        this.vista.btnEmpezar.setActionCommand("empezar");
+        //Porteros
         this.vista.btnPortero.addActionListener(this);
+        //Delanteros
         this.vista.btnDelanteroDerecho.addActionListener(this);
         this.vista.btnDelanteroIzquierda.addActionListener(this);
+        //CentroCampistas
         this.vista.btnCentroCampistaDerecho.addActionListener(this);
         this.vista.btnCentroCampistaDerechoCentro.addActionListener(this);
         this.vista.btnCentroCampistaIzquierdoCentro.addActionListener(this);
         this.vista.btnCentroCampistaIzquierdo.addActionListener(this);
+        //Defensas
         this.vista.btnDefensaDerecha.addActionListener(this);
         this.vista.btnDefensaDerechaCentro.addActionListener(this);
         this.vista.btnDefensaIzquierda.addActionListener(this);
         this.vista.btnDefensaIzquierdaCentro.addActionListener(this);
+        //Eleccion
         this.vista.btnEleccionUno.addActionListener(this);
         this.vista.btnEleccionDos.addActionListener(this);
         this.vista.btnEleccionTres.addActionListener(this);
