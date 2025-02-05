@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
-<!-- Generated 29 ene 2025, 8:55:38 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 feb 2025, 13:07:02 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class catalog="liga_fantasy" name="persistencias.Equipo" optimistic-lock="none" table="equipo">
-        <id name="idEquipo" type="int">
+        <id name="idEquipo" type="java.lang.Integer">
             <column name="id_equipo"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="nombre" type="string">
             <column length="50" name="nombre" not-null="true"/>
@@ -40,6 +39,5 @@
             </key>
             <one-to-many class="persistencias.Jugador"/>
         </set>
-
     </class>
 </hibernate-mapping>

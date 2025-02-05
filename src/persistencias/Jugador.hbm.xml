@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
-<!-- Generated 29 ene 2025, 8:55:38 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 feb 2025, 13:07:02 by Hibernate Tools 5.4.33.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class catalog="liga_fantasy" name="persistencias.Jugador" optimistic-lock="none" table="jugador">
-        <id name="idJugador" type="int">
+        <id name="idJugador" type="java.lang.Integer">
             <column name="id_jugador"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <many-to-one class="persistencias.Equipo" fetch="select" name="equipo">
             <column name="id_equipo"/>
@@ -30,10 +29,6 @@
         </property>
         <property name="fuerzaPortero" type="int">
             <column name="fuerza_portero" not-null="true"/>
-        </property>
-        <property name="seleccionado" type="boolean">
-            <column name="seleccionado" not-null="true"/>
-
         </property>
     </class>
 </hibernate-mapping>

@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 public class Controlador implements ActionListener,MouseListener {
 
     private Vista vista;
-
+    private ControladorHibernate hibernate;
     public Controlador(Vista vista) {
         this.vista = vista;
         
@@ -24,6 +24,7 @@ public class Controlador implements ActionListener,MouseListener {
         this.vista.btnPortero.addActionListener(this);
         //Delanteros
         this.vista.btnDelanteroDerecho.addActionListener(this);
+        
         this.vista.btnDelanteroIzquierda.addActionListener(this);
         //CentroCampistas
         this.vista.btnCentroCampistaDerecho.addActionListener(this);
@@ -59,7 +60,9 @@ public class Controlador implements ActionListener,MouseListener {
             vista.btnDefensaIzquierdaCentro,
             vista.btnPortero
         };
-
+        switch(e.getActionCommand()) {
+        
+        }
         if (e.getSource() == this.vista.btnEmpezar) {
             this.vista.panelInicio.setVisible(false);
             this.vista.PanelPlantilla.setVisible(true);
