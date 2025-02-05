@@ -33,7 +33,10 @@ public class Controlador implements ActionListener,MouseListener {
         this.vista.btnEleccionDos.addActionListener(this);
         this.vista.btnEleccionTres.addActionListener(this);
         this.vista.btnEleccionCuatro.addActionListener(this);
+        this.vista.btnJugar.addActionListener(this);
+        this.vista.btnSalir.addActionListener(this);
         this.vista.lblSalir.addMouseListener(this);
+        this.vista.btnSimularPartida.addActionListener(this);
         imagenes();
     }
 
@@ -55,7 +58,7 @@ public class Controlador implements ActionListener,MouseListener {
 
         if (e.getSource() == this.vista.btnEmpezar) {
             this.vista.panelInicio.setVisible(false);
-            this.vista.PanelPlantilla.setVisible(true);
+            this.vista.panelMenu.setVisible(true);
         } else if (isPlayerButton(e.getSource())) {
             vista.panelElecion.setVisible(true);
             disableButtons(botonesDeshabilitar);
@@ -66,6 +69,14 @@ public class Controlador implements ActionListener,MouseListener {
         
         if(e.getSource()==this.vista.lblFondoDraft) {
         	vista.panelElecion.setVisible(false);
+        }
+        if(e.getSource()==this.vista.btnJugar) {
+        	this.vista.panelMenu.setVisible(false);
+        	this.vista.PanelPlantilla.setVisible(true);
+        }
+        if(e.getSource()==this.vista.btnSalir) {
+        	this.vista.panelMenu.setVisible(false);
+        	this.vista.panelInicio.setVisible(true);
         }
         
     }
@@ -120,7 +131,9 @@ public class Controlador implements ActionListener,MouseListener {
 
     public void imagenes() {
         this.vista.lblFondo.setIcon(fotoEscalarLabel(this.vista.lblFondo, "imagenes/fondo-principal.jpg"));
+        this.vista.lblFondoMenu.setIcon(fotoEscalarLabel(this.vista.lblFondoMenu, "imagenes/fondo-principal.jpg"));
         this.vista.lblLogo.setIcon(fotoEscalarLabel(this.vista.lblLogo, "imagenes/logo.png"));
+        this.vista.lblLogoMenu.setIcon(fotoEscalarLabel(this.vista.lblLogoMenu, "imagenes/logo.png"));
         this.vista.lblFondoPlantilla.setIcon(fotoEscalarLabel(this.vista.lblFondoPlantilla, "imagenes/cesped.png"));
         this.vista.btnEmpezar.setIcon(fotoEscalarButton(this.vista.btnEmpezar, "imagenes/boton-inicio.png"));
         this.vista.btnPortero.setIcon(fotoEscalarButton(this.vista.btnPortero, "imagenes/camiseta-de-futbol.png"));
@@ -134,6 +147,10 @@ public class Controlador implements ActionListener,MouseListener {
         this.vista.btnCentroCampistaDerecho.setIcon(fotoEscalarButton(this.vista.btnCentroCampistaDerecho, "imagenes/camiseta-de-futbol.png"));
         this.vista.btnDelanteroDerecho.setIcon(fotoEscalarButton(this.vista.btnDelanteroDerecho, "imagenes/camiseta-de-futbol.png"));
         this.vista.btnDelanteroIzquierda.setIcon(fotoEscalarButton(this.vista.btnDelanteroIzquierda, "imagenes/camiseta-de-futbol.png"));
+        this.vista.btnSimularPartida.setIcon(fotoEscalarButton(this.vista.btnSimularPartida,"imagenes/enfentramiento.png"));
+        this.vista.btnJugar.setIcon(fotoEscalarButton(this.vista.btnJugar, "imagenes/boton-jugar.png"));
+        this.vista.btnSobreNosotros.setIcon(fotoEscalarButton(this.vista.btnSobreNosotros, "imagenes/sobrenosotros.jpg"));
+        this.vista.btnSalir.setIcon(fotoEscalarButton(this.vista.btnSalir, "imagenes/boton-salir.png"));
         this.vista.lblFondoDraft.setIcon(fotoEscalarLabel(this.vista.lblFondoDraft, "imagenes/fondo_futDraft.jpg"));
         this.vista.lblSalir.setIcon(fotoEscalarLabel(this.vista.lblSalir,"imagenes/salir.png"));
     }

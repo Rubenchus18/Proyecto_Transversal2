@@ -49,6 +49,14 @@ public class Vista extends JFrame {
 	public JLabel lblFondoDraft;
 	public JLabel lblSalir;
 	public Object lblSaliraddMouseLis;
+	public JButton btnSimularPartida;
+	public JButton btnEleccionCinco;
+	public JLabel lblFondoMenu;
+	public JLabel lblLogoMenu;
+	public JButton btnJugar;
+	public JButton btnSobreNosotros;
+	public JButton btnSalir;
+	public JPanel panelMenu;
 	/**
 	 * Launch the application.
 	 */
@@ -89,18 +97,52 @@ public class Vista extends JFrame {
 		   PanelPlantilla = new JPanel();
 		   PanelPlantilla.setBounds(0, 0, 1329, 742);
 		   PanelPlantilla.setVisible(false);
+		   
+		   panelMenu = new JPanel();
+		   panelMenu.setBounds(0, 0, 1329, 742);
+		   contentPane.add(panelMenu);
+		   panelMenu.setVisible(false);
+		   panelMenu.setLayout(null);
+		   
+		   btnSalir = new JButton("");
+		   btnSalir.setBounds(459, 597, 500, 113);
+		   panelMenu.add(btnSalir);
+		   
+		   btnSobreNosotros = new JButton("");
+		   btnSobreNosotros.setBounds(459, 474, 500, 113);
+		   panelMenu.add(btnSobreNosotros);
+		   
+		   btnJugar = new JButton("");
+		   btnJugar.setBounds(459, 351, 500, 113);
+		   panelMenu.add(btnJugar);
+		   
+		   lblLogoMenu = new JLabel("");
+		   lblLogoMenu.setBounds(459, 0, 500, 338);
+		   panelMenu.add(lblLogoMenu);
+		   
+		   lblFondoMenu = new JLabel("");
+		   lblFondoMenu.setBounds(10, 0, 1329, 742);
+		   panelMenu.add(lblFondoMenu);
 		   contentPane.add(PanelPlantilla);
 		   PanelPlantilla.setLayout(null);
 		    
 		     panelElecion = new JPanel();
 		    panelElecion.setBounds(249, 148, 844, 324);
 		    panelElecion.setVisible(false);
+		    
+		     btnSimularPartida = new JButton("");
+		    
+		    btnSimularPartida.setBounds(1029, 622, 213, 91);
+		    btnSimularPartida.setContentAreaFilled(false); 
+		    btnSimularPartida.setBorderPainted(false); 
+		    btnSimularPartida.setFocusPainted(false);
+		    PanelPlantilla.add(btnSimularPartida);
 		    PanelPlantilla.add(panelElecion);
 		    panelElecion.setLayout(null);
 		     
-		     JButton btnEleccionTres_1 = new JButton("");
-		     btnEleccionTres_1.setBounds(359, 29, 118, 285);
-		     panelElecion.add(btnEleccionTres_1);
+		     btnEleccionCinco = new JButton("");
+		     btnEleccionCinco.setBounds(359, 29, 118, 285);
+		     panelElecion.add(btnEleccionCinco);
 		     
 		     lblSalir = new JLabel("");
 		     lblSalir.setBounds(799, 0, 45, 31);
