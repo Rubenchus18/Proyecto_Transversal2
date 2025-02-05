@@ -1,6 +1,8 @@
 package controlador;
 
 import vista.*;
+
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +12,8 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
+import net.bytebuddy.asm.Advice.This;
 
 public class Controlador implements ActionListener,MouseListener {
 
@@ -37,6 +41,10 @@ public class Controlador implements ActionListener,MouseListener {
         this.vista.btnSalir.addActionListener(this);
         this.vista.lblSalir.addMouseListener(this);
         this.vista.btnSimularPartida.addActionListener(this);
+        this.vista.btnJugadores.addActionListener(this);
+        this.vista.lblVolverJugadores.addMouseListener(this);
+        this.vista.lblVolverPlantilla.addMouseListener(this);
+      
         imagenes();
     }
 
@@ -77,6 +85,10 @@ public class Controlador implements ActionListener,MouseListener {
         if(e.getSource()==this.vista.btnSalir) {
         	this.vista.panelMenu.setVisible(false);
         	this.vista.panelInicio.setVisible(true);
+        }
+        if(e.getSource()==this.vista.btnJugadores) {
+        	this.vista.panelMenu.setVisible(false);
+        	this.vista.panelJugadores.setVisible(true);
         }
         
     }
@@ -149,9 +161,13 @@ public class Controlador implements ActionListener,MouseListener {
         this.vista.btnDelanteroIzquierda.setIcon(fotoEscalarButton(this.vista.btnDelanteroIzquierda, "imagenes/camiseta-de-futbol.png"));
         this.vista.btnSimularPartida.setIcon(fotoEscalarButton(this.vista.btnSimularPartida,"imagenes/enfentramiento.png"));
         this.vista.btnJugar.setIcon(fotoEscalarButton(this.vista.btnJugar, "imagenes/boton-jugar.png"));
-        this.vista.btnSobreNosotros.setIcon(fotoEscalarButton(this.vista.btnSobreNosotros, "imagenes/sobrenosotros.jpg"));
+        this.vista.btnJugadores.setIcon(fotoEscalarButton(this.vista.btnJugadores, "imagenes/sobrenosotros.jpg"));
         this.vista.btnSalir.setIcon(fotoEscalarButton(this.vista.btnSalir, "imagenes/boton-salir.png"));
         this.vista.lblFondoDraft.setIcon(fotoEscalarLabel(this.vista.lblFondoDraft, "imagenes/fondo_futDraft.jpg"));
+        this.vista.lblVolverJugadores.setIcon(fotoEscalarLabel(this.vista.lblVolverJugadores, "imagenes/volver.png"));
+        this.vista.lblVolverPlantilla.setIcon(fotoEscalarLabel(this.vista.lblVolverPlantilla, "imagenes/volver.png"));
+        this.vista.lblLogJugadores.setIcon(fotoEscalarLabel(this.vista.lblLogJugadores, "imagenes/logo.png"));
+        this.vista.lblFondo_Pantalla_Jugadores.setIcon(fotoEscalarLabel(this.vista.lblFondo_Pantalla_Jugadores, "imagenes/fondo-principal.jpg"));
         this.vista.lblSalir.setIcon(fotoEscalarLabel(this.vista.lblSalir,"imagenes/salir.png"));
     }
 
@@ -177,6 +193,14 @@ public class Controlador implements ActionListener,MouseListener {
 
             enableButtons(botonesHabilitar);
         }
+        if(e.getSource()==this.vista.lblVolverJugadores) {
+        	this.vista.panelJugadores.setVisible(false);
+        	this.vista.panelMenu.setVisible(true);
+        }
+        if(e.getSource()==this.vista.lblVolverPlantilla) {
+        	this.vista.PanelPlantilla.setVisible(false);
+        	this.vista.panelMenu.setVisible(true);
+        }
     }
 
 	@Override
@@ -193,13 +217,22 @@ public class Controlador implements ActionListener,MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		 if (e.getSource() == this.vista.btnSimularPartida) {
+		        
+		        vista.btnSimularPartida.setIcon(fotoEscalarButton(vista.btnSimularPartida, "imagenes/enfentramiento_hover.png"));
+		       
+		        vista.btnSimularPartida.setBounds(vista.btnSimularPartida.getX(), vista.btnSimularPartida.getY(), 250, 60);
+		    }
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if (e.getSource() == this.vista.btnSimularPartida) {
+	       
+	        vista.btnSimularPartida.setIcon(fotoEscalarButton(vista.btnSimularPartida, "imagenes/enfentramiento.png"));
+	       
+	        vista.btnSimularPartida.setBounds(vista.btnSimularPartida.getX(), vista.btnSimularPartida.getY(), 200, 50);
+	    }
 		
 	}
 }
