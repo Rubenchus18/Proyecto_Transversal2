@@ -18,7 +18,7 @@ import persistencias.Jugador;
 
 public class ControladorHibernate {
 	
-	private  static SessionFactory  sessionFactory;
+	private   SessionFactory  sessionFactory;
 	
 	
 	public ControladorHibernate() throws Exception{
@@ -33,15 +33,14 @@ public class ControladorHibernate {
 		}
 	}
 	
-	public static void main(String[]args) {
+	/*public static void main(String[]args) {
 		try {
 			ControladorHibernate pru=new ControladorHibernate();
 			try {
 				/*List<Jugador> salida=pru.extraerJugadoresIdEquipo(sessionFactory, 1);
 				for(Jugador clave: salida) {
 					System.out.println(clave);
-				}*/
-				System.out.println(123);
+				}
 				pru.cargarJugadores();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -51,7 +50,7 @@ public class ControladorHibernate {
 			
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	public void close() {
 		if(null!=sessionFactory) {
@@ -142,6 +141,7 @@ public class ControladorHibernate {
 			insertarJugadores(sessionFactory, abrirCSV("ficheros/jugadores_ligaFantasy.csv"));
 		}catch(Exception e) {
 			e.printStackTrace();
+			
 			throw e;
 		}
 	}
@@ -200,6 +200,57 @@ public class ControladorHibernate {
 		}
 		
 		return jugadoresSalida;
+	}
+	
+	public List<Jugador> extraerJugadores(){
+		List<Jugador> salida=new ArrayList<Jugador>();
+		Session sesion=null;
+		try {
+			sesion=sessionFactory.getCurrentSession();
+			sesion.beginTransaction();
+			
+			Query query=sesion.createQuery("from Jugador");
+			
+			salida=query.list();
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			if(null!=sesion) {
+				sesion.getTransaction().rollback();
+			}
+		}finally {
+			if(null!=sesion) {
+				sesion.close();
+			}
+			
+		}
+		return salida;
+	}
+	
+	public void resetearJugadores() {
+		Session sesion=null;
+		try {
+			sesion=sessionFactory.getCurrentSession();
+			sesion.beginTransaction();
+			
+			Query query=sesion.createQuery("update from jugador "
+										+ "set equipo=null ");
+			
+			query.executeUpdate();
+			System.out.println("fgd");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			if(null!=sesion) {
+				sesion.getTransaction().rollback();
+			}
+		}finally {
+			if(null!=sesion) {
+				sesion.close();
+			}
+			
+		}
 	}
 	
 }
