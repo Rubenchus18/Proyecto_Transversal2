@@ -41,6 +41,7 @@ public class ControladorHibernate {
 				for(Jugador clave: salida) {
 					System.out.println(clave);
 				}*/
+				System.out.println(123);
 				pru.cargarJugadores();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
